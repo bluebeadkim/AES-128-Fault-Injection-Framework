@@ -65,6 +65,7 @@ aes128-fault-injection-framework/
 |  |---- metrics_graph.png      # 분석 결과 시각화 그래프 파일
 |  |---- syntheesis_report/     # Vivado 논리 합성 결과 리포트
 |---- README.md             # 프로젝트 메인 대문 (본문서)
+```
 
 ## 7. Results
 ### 1) 기본 AES 코어 구현 및 NIST Vector Test.
@@ -93,4 +94,4 @@ VCD info: dumpfile results/aes_simulation.vcd opened for output.
 [DEBUG] XOR Mismatch Mask: 00000000000000000000000000070000
 ==================================================
 verification/tb/tb_aes_top.v:80: $finish called at 470000 (1ps)
-
+```
