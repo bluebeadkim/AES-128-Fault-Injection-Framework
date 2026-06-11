@@ -35,7 +35,7 @@ module aes_sbox (
             8'h64: out_byte = 8'h43; 8'h65: out_byte = 8'h4d; 8'h66: out_byte = 8'h33; 8'h67: out_byte = 8'h85;
             8'h68: out_byte = 8'h45; 8'h69: out_byte = 8'hf9; 8'h6a: out_byte = 8'h02; 8'h6b: out_byte = 8'h7f;
             8'h6c: out_byte = 8'h50; 8'h6d: out_byte = 8'h3c; 8'h6e: out_byte = 8'h9f; 8'h6f: out_byte = 8'ha8;
-            8'h70: out_byte = 8'h51; 8'h71:.out_byte = 8'ha3; 8'h72: out_byte = 8'h40; 8'h73: out_byte = 8'h8f;
+            8'h70: out_byte = 8'h51; 8'h71: out_byte = 8'ha3; 8'h72: out_byte = 8'h40; 8'h73: out_byte = 8'h8f;
             8'h74: out_byte = 8'h92; 8'h75: out_byte = 8'h9d; 8'h76: out_byte = 8'h38; 8'h77: out_byte = 8'hf5;
             8'h78: out_byte = 8'hbc; 8'h79: out_byte = 8'hb6; 8'h7a: out_byte = 8'hda; 8'h7b: out_byte = 8'h21;
             8'h7c: out_byte = 8'h10; 8'h7d: out_byte = 8'hff; 8'h7e: out_byte = 8'hf3; 8'h7f: out_byte = 8'hd2;
