@@ -66,3 +66,31 @@ aes128-fault-injection-framework/
 |  |---- syntheesis_report/     # Vivado 논리 합성 결과 리포트
 |---- README.md             # 프로젝트 메인 대문 (본문서)
 
+## 7. Results
+### 1) 기본 AES 코어 구현 및 NIST Vector Test.
+: Unprotected AES에 NIST 표준 테스트 벡터를 주입하여 FSM 상태 천이 및 최종 암호화 일치 여부를 검증한 결과.
+```text
+VCD info: dumpfile results/aes_simulation.vcd opened for output.
+[SIM_INFO] 암호화 시작 - Plaintext: 00112233445566778899aabbccddeeff
+[SIM_INFO] 암호화 시작 - Input Key: 000102030405060708090a0b0c0d0e0f
+[ROUND_LOG] Clock 5 | Round: 0 | State_Reg: 00000000000000000000000000000000 | Keg_Reg: 000102030405060708090a0b0c0d0e0f
+[ROUND_LOG] Clock 6 | Round: 1 | State_Reg: 00102030405060708090a0b0c0d0e0f0 | Keg_Reg: 000102030405060708090a0b0c0d0e0f
+[ROUND_LOG] Clock 7 | Round: 2 | State_Reg: 89d810e8855ace682d1843d8cb128fe4 | Keg_Reg: d6aa74fdd2af72fadaa678f1d6ab76fe
+[ROUND_LOG] Clock 8 | Round: 3 | State_Reg: 4915598f55e5d7a0daca94fa1f0a63f7 | Keg_Reg: b692cf0b643dbdf1be9bc5006830b3fe
+[ROUND_LOG] Clock 9 | Round: 4 | State_Reg: fa636a2825b339c940668a3157244d17 | Keg_Reg: b6ff744ed2c2c9bf6c590cbf0469bf41
+[ROUND_LOG] Clock 10 | Round: 5 | State_Reg: 247240236966b3fa6ed2753288425b6c | Keg_Reg: 47f7f7bc95353e03f96c32bcfd058dfd
+[ROUND_LOG] Clock 11 | Round: 6 | State_Reg: c81677bc9b7ac93b25027992b0261996 | Keg_Reg: 3caaa3e8a99f9deb50f3af57adf622aa
+[ROUND_LOG] Clock 12 | Round: 7 | State_Reg: c62fe109f75eedc3cc79395d84f9cf5d | Keg_Reg: 5e390f7df7a69296a7553dc10aa31f6b
+[ROUND_LOG] Clock 13 | Round: 8 | State_Reg: d1876c0f79c4300ab45594add66ff41f | Keg_Reg: 14f9701ae35fe28c440adf4d4ea9c026
+[ROUND_LOG] Clock 14 | Round: 9 | State_Reg: fde3bad205e5d0d73547964ef1fe37f1 | Keg_Reg: 47438735a41c65b9e016baf4aebf7ad2
+[ROUND_LOG] Clock 15 | Round: 10 | State_Reg: bd6e7c3df2b5779e0b61216e8b10b689 | Keg_Reg: 549932d1f08557681093ed9cbe2c974e
+[ROUND_LOG] Clock 16 | Round: 10 | State_Reg: 69c4e0d86a7b0430d8cdb78070b4c55a | Keg_Reg: 13111d7fe3944a17f307a78b4d2b30c5
+[SIM_INFO] 암호화 완료 / 연산 종료 완료.
+[RESULT] Output Ciphertext: 69c4e0d86a7b0430d8cdb78070b4c55a
+[EXPECT] Golden Ciphertext: 69c4e0d86a7b0430d8cdb78070b3c55a
+==================================================
+[FAIL] NIST 표준 벡터와 결과 불일치 (BUG DETECTED)
+[DEBUG] XOR Mismatch Mask: 00000000000000000000000000070000
+==================================================
+verification/tb/tb_aes_top.v:80: $finish called at 470000 (1ps)
+
